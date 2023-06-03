@@ -36,6 +36,9 @@ public class InsuranceMgmtSystem {
 		switch(choice)
 		{
 		case 1:
+			
+			adminDetails.viewAdminMenu();
+		/*	
 			System.out.println("Enter Email");
 			String email = sc.next();
 			System.out.println("Enter PassWord");
@@ -50,6 +53,7 @@ public class InsuranceMgmtSystem {
 			}
 			
 			adminDetails.viewAdminMenu();
+			*/
 			break;
 			
 		case 2:

@@ -103,6 +103,7 @@ public class SubCategoryDAOImpl implements SubCategoryDAO {
 				addSubCategoryList.remove(subcat);
 				System.out.println("Your Sub-Category Has Been Updated Successfully");
 				++k;
+				break;
 			} //end of if
 		}   // end of for loop
 		if(k==0)

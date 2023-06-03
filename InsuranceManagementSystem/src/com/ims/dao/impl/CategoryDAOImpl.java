@@ -104,6 +104,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 				addCategoryList.remove(cat);
 				System.out.println("Your Category Has Been Deleted Successfully");
 				++k;
+				break;
 			}   //end of if loop
 		}  //end of for loop
 		if(k==0)

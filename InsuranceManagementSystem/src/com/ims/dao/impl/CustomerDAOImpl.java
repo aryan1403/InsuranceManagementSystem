@@ -12,7 +12,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 	
 	Scanner sc=new Scanner(System.in);
 	
-	List<Customer> addCustomers=new ArrayList<>();
+	static List<Customer> addCustomers=new ArrayList<>();
 	
 	CategoryDAOImpl catImpldao = new CategoryDAOImpl();
 	SubCategoryDAOImpl subcatImpldao = new SubCategoryDAOImpl();
@@ -44,9 +44,11 @@ public class CustomerDAOImpl implements CustomerDAO {
 	}
 	@Override
 	public List<Customer> viewAllCustomerInfo(){
+		
 	for(Customer cus: addCustomers)
 	{
-		System.out.println(cus.getUserId()+"\t"+cus.getFirstName()+"\t"+cus.getLastName()+"\t"+cus.getEmail()+"\t"+cus.getPhoneNumber()+"\t"+cus.getPassWord());
+		System.out.println(cus.getUserId()+"\t"+cus.getFirstName()+"\t"+cus.getLastName()+"\t"+cus.getEmail()+"\t"+cus.getPassWord()+"\t"+cus.getPhoneNumber());
+		
 	}
 	return addCustomers;
 	}

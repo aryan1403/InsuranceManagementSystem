@@ -44,6 +44,7 @@ public class PolicyDAOImpl implements PolicyDAO {
 		{
 			System.out.println(pol.getPolId()+"\t"+pol.getPolicy());
 		}
+		
 		return addPolicyList;
 	}
 
@@ -101,6 +102,7 @@ public class PolicyDAOImpl implements PolicyDAO {
 				addPolicyList.remove(pol);
 				System.out.println("Your Policy Has Been Deleted Successfully");
 				++k;
+				break;
 			} //end of if
 		}   // end of for loop
 		if(k==0)
