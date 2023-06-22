@@ -37,7 +37,7 @@ body {
 <div class="card-body">
 
 
-<form th:action="@{/update}" method="post" th:object="${inventory}">
+<form th:action="@{/update/{id}(id=${inventory._id})}" method="post" th:object="${inventory}">
 
 <div class="form-group">
 <label for="user" class="form-label"> User</label>

@@ -91,8 +91,6 @@ public class InventoryServiceImpl implements InventoryService {
 
 @Override
 public Inventory saveOrupdateInventory(Inventory inventory) {
-	// TODO Auto-generated method stub
-	System.out.println(inventory.get_id());
 	inventoryRepo.save(inventory);
 	return inventory;
 
