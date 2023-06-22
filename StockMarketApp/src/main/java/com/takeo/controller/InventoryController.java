@@ -56,12 +56,12 @@ public class InventoryController {
 	
 	
 	
-	@PostMapping(path= {"/update"})
-	public String update(@ModelAttribute Model model, Inventory inventory)
+	@PostMapping(path= {"/update/{id}"})
+	public String update(@ModelAttribute Inventory inventory, @PathVariable String id)
 	{
-		//System.out.println(inventory.get_id());
-		inventoryservice.saveInventory(inventory);
-		//inventoryservice.saveOrupdateInventory(inventory);
+		System.out.println(id);
+		inventory.set_id(id);
+		inventoryservice.saveOrupdateInventory(inventory);
 		
 		return "redirect:/inventory";
 	}
