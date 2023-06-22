@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title >Inventory Page</title>
+    
+    <!--CSS Part Starts Here-!-->
+    
+    <style>
+        /* Inline CSS */
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: whitesmoke;
+            background-image: url('/images/dp.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: whitesmoke;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: lightblue;
+            color: black;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        
+        .btn:hover {
+            background-color: whitesmoke;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        th {
+            background-color: whitesmoke;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background-color: whitesmoke;
+        }
+    </style>
+    
+    <!--CSS Part Ends Here-!-->
+    
+</head>
+<body>
+
+	<div class="container mt-5">
+    <h1 align="center">Inventory Page</h1>
+    
+    <p align="center"><a th:href="@{/add}" class="btn btn-info"> Add Inventory</a></p>
+    
+    <table class="table-bordered table-sm">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Stock</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="inventoryItem : ${inventoryItems}">
+                <td th:text="${inventoryItem._id}"></td>
+                <td th:text="${inventoryItem.user}"></td>
+                <td th:text="${inventoryItem.stock}"></td>
+                <td th:text="${inventoryItem.type}"></td>
+                <td th:text="${inventoryItem.price}"></td>
+                <td th:text="${inventoryItem.qty}"></td>
+                
+                <td>
+                <a th:href="@{/update/{id}(id=${inventoryItem._id})}">Edit</a>
+                <a th:href="@{/delete/{id}(id=${inventoryItem._id})}">Delete</a>
+                </td>
+                
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
